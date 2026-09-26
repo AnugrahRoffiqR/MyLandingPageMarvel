@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Black Panther - Jelajahi Wakanda, kenali karakternya, dan pesan tiket filmnya.">
+    <meta name="theme-color" content="#060604">
 
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
@@ -11,17 +13,22 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <link rel="icon" href="logo (1).png">
+
     <title>Black Panther | Wakanda</title>
 </head>
 
 <body>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- HERO / HOME -->
 
     <header class="main" id="home">
 
         <!-- VIDEO HALAMAN UTAMA -->
-        <video class="hero__video" autoplay muted loop playsinline>
+        <video class="hero__video" autoplay muted loop playsinline poster="header (1).png">
             <source src="black-panther.mp4" type="video/mp4">
         </video>
 
@@ -29,23 +36,19 @@
         <!-- OPENING ANIMATION -->
         <div class="intro">
 
-            <!-- Gambar Black Panther -->
             <img src="pngwing.com.png" alt="Black Panther" class="intro__character">
 
-            <!-- Tulisan Opening -->
             <div class="intro__text">
-
                 <h1>
                     BLACK
                     <span>PANTHER</span>
                 </h1>
-
                 <p>WAKANDA FOREVER</p>
-
             </div>
 
-            <!-- Garis animasi -->
             <div class="intro__line"></div>
+
+            <div class="intro__skip">Klik untuk lewati</div>
 
         </div>
 
@@ -62,58 +65,53 @@
                     </a>
                 </div>
 
-                <!-- Tombol menu HP -->
-                <div class="nav__menu__btn" id="menu-btn">
+                <button class="nav__menu__btn" id="menu-btn" aria-label="Buka menu" aria-expanded="false">
                     <i class="ri-menu-3-line"></i>
-                </div>
+                </button>
 
             </div>
 
-
-            <!-- Navigation -->
             <ul class="nav__links" id="nav-links">
-
-                <li>
-                    <a href="#home">Home</a>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#cast">Karakter</a></li>
+                <li><a href="#gallery">Teknologi</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="nav__cta-mobile">
+                    <button class="btn buy-ticket">BUY TICKET <i class="ri-ticket-2-line"></i></button>
                 </li>
-
-                <li>
-                    <a href="#about">About Us</a>
-                </li>
-
-                <li>
-                    <a href="#services">Services</a>
-                </li>
-
-                <li>
-                    <a href="#cast">Karakter</a>
-                </li>
-
-                <li>
-                    <a href="#gallery">Teknologi</a>
-                </li>
-
-                <li>
-                    <a href="#collections">Collections</a>
-                </li>
-
-                <li>
-                    <a href="#contact">Contact Us</a>
-                </li>
-
             </ul>
+
+            <button class="btn btn--sm nav__cta buy-ticket">
+                <i class="ri-ticket-2-line"></i> Tiket
+            </button>
+
+            <div class="nav__overlay" id="nav-overlay"></div>
 
         </nav>
 
 
-        <!--HERO CONTENT-->
+        <!-- HERO CONTENT -->
 
         <div class="header__container">
+
+            <span class="header__eyebrow">
+                <i class="ri-movie-2-line"></i> Marvel Studios &bull; Now Streaming
+            </span>
 
             <h1>
                 <span>BLACK</span>
                 <span>Panther</span>
             </h1>
+
+            <ul class="header__meta">
+                <li><i class="ri-star-fill"></i> 7.3 / 10</li>
+                <li><i class="ri-time-line"></i> 2j 14m</li>
+                <li><i class="ri-calendar-line"></i> 2018</li>
+                <li class="header__badge">13+</li>
+            </ul>
 
             <p>
                 Marvel Studios' Black Panther follows T'Challa, the king of
@@ -122,353 +120,384 @@
                 sumber daya luar biasa bernama Vibranium.
             </p>
 
-
-            <!-- BUY BUTTON -->
             <div class="header__btn">
-
                 <button class="btn buy-ticket">
                     BUY TICKET
                     <i class="ri-arrow-right-long-line"></i>
                 </button>
-
+                <a href="#about" class="btn btn--ghost">
+                    <i class="ri-information-line"></i>
+                    Selengkapnya
+                </a>
             </div>
 
-
-            <!-- SOCIAL MEDIA -->
             <ul class="socials">
-
                 <li>
-                    <a href="https://www.tiktok.com/@velraithe_" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.tiktok.com/@velraithe_" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                         <i class="ri-tiktok-fill"></i>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
-                        <i class="ri-twitter-fill"></i>
+                    <a href="#" aria-label="Twitter">
+                        <i class="ri-twitter-x-fill"></i>
                     </a>
                 </li>
-
                 <li>
-                    <a href="#">
+                    <a href="#" aria-label="Google">
                         <i class="ri-google-fill"></i>
                     </a>
                 </li>
-
                 <li>
-                    <a href="https://www.instagram.com/cynicc___/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/cynicc___/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <i class="ri-instagram-line"></i>
                     </a>
                 </li>
-
             </ul>
 
         </div>
 
+        <a href="#about" class="scroll-down" aria-label="Scroll ke bawah">
+            <span></span>
+        </a>
+
     </header>
 
 
-    <!-- ABOUT -->
+    <main>
 
-    <section class="section" id="about">
+        <!-- ABOUT -->
 
-        <div class="section__container">
+        <section class="section section--about" id="about">
 
-            <h2>Tentang Black Panther</h2>
+            <div class="section__container about__grid">
 
-            <p>
-                Black Panther adalah kisah tentang T'Challa, raja baru Wakanda
-                yang harus berjuang menjaga negaranya dari ancaman luar dan
-                internal. Dengan teknologi canggih berbasis Vibranium,
-                Wakanda menjadi bangsa yang maju namun tetap tersembunyi
-                dari dunia.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section class="section" id="services">
-
-        <div class="section__container">
-
-            <h2>Services</h2>
-
-            <p>
-                Nikmati berbagai pengalaman menarik dari dunia Black Panther
-                dan Wakanda.
-            </p>
-
-
-            <div class="cards">
-
-                <div class="card">
-
-                    <i class="ri-movie-2-line"></i>
-
-                    <h3>Movie Experience</h3>
-
-                    <p>
-                        Saksikan perjalanan T'Challa menjadi Black Panther
-                        dan raja Wakanda.
-                    </p>
-
+                <div class="about__image">
+                    <div class="about__glow"></div>
+                    <img src="pngwing.com.png" alt="Black Panther">
                 </div>
 
+                <div class="about__content">
 
-                <div class="card">
+                    <span class="section__eyebrow">Tentang Film</span>
 
-                    <i class="ri-ticket-line"></i>
-
-                    <h3>Movie Tickets</h3>
-
-                    <p>
-                        Dapatkan informasi dan pengalaman mengenai film
-                        Black Panther.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <i class="ri-shield-star-line"></i>
-
-                    <h3>Wakanda</h3>
+                    <h2 class="section__title">Tentang <span>Black Panther</span></h2>
 
                     <p>
-                        Jelajahi dunia Wakanda yang penuh teknologi
-                        dan Vibranium.
+                        Black Panther adalah kisah tentang T'Challa, raja baru Wakanda
+                        yang harus berjuang menjaga negaranya dari ancaman luar dan
+                        internal. Dengan teknologi canggih berbasis Vibranium,
+                        Wakanda menjadi bangsa yang maju namun tetap tersembunyi
+                        dari dunia.
                     </p>
+
+                    <div class="stats">
+                        <div class="stat">
+                            <strong data-count="1.3" data-prefix="$" data-suffix="B+" data-decimals="1">0</strong>
+                            <span>Box Office (USD)</span>
+                        </div>
+                        <div class="stat">
+                            <strong data-count="3">0</strong>
+                            <span>Piala Oscar</span>
+                        </div>
+                        <div class="stat">
+                            <strong data-count="96" data-suffix="%">0</strong>
+                            <span>Rotten Tomatoes</span>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CAST & CHARACTERS -->
+        <!-- SERVICES -->
 
-    <section class="section" id="cast">
+        <section class="section" id="services">
 
-        <div class="section__container">
+            <div class="section__container">
 
-            <h2>Karakter Utama</h2>
-
-            <p>
-                Mengenal pahlawan dan pejuang hebat dibalik kejayaan Wakanda.
-            </p>
-
-            <div class="cards">
-
-                <div class="card">
-                    <i class="ri-shield-user-fill"></i>
-                    <h3>T'Challa / Black Panther</h3>
-                    <p>Raja Wakanda yang memiliki kekuatan superhero dari Ramuan Berbentuk Hati dan kostum Vibranium.</p>
-                </div>
-
-                <div class="card">
-                    <i class="ri-sword-fill"></i>
-                    <h3>Erik Killmonger</h3>
-                    <p>Mantan prajurit operasi khusus yang menantang T'Challa untuk merebut takhta Wakanda.</p>
-                </div>
-
-                <div class="card">
-                    <i class="ri-cpu-fill"></i>
-                    <h3>Shuri</h3>
-                    <p>Putri Wakanda dan kepala Divisi Desain Wakanda yang merancang teknologi canggih.</p>
-                </div>
-
-                <div class="card">
-                    <i class="ri-focus-3-fill"></i>
-                    <h3>Okoye</h3>
-                    <p>Jenderal pasukan khusus wanita Dora Milaje yang sangat setia pada takhta Wakanda.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GALLERY / TRAILER -->
-
-    <section class="section" id="gallery">
-
-        <div class="section__container">
-
-            <h2>Galeri & Teknologi Vibranium</h2>
-
-            <p>
-                Wakanda terkenal dengan pemanfaatan logam terkuat di bumi, Vibranium, dalam segala aspek kehidupan.
-            </p>
-
-            <div class="cards">
-
-                <div class="card">
-                    <i class="ri-flashlight-fill"></i>
-                    <h3>Vibranium Suit</h3>
-                    <p>Kostum kinetik yang dapat menyerap energi serangan dan mengembalikannya ke musuh.</p>
-                </div>
-
-                <div class="card">
-                    <i class="ri-rocket-fill"></i>
-                    <h3>Royal Talon Fighter</h3>
-                    <p>Pesawat tempur canggih Wakanda dengan kecepatan tinggi dan sistem kamuflase tak terlihat.</p>
-                </div>
-
-                <div class="card">
-                    <i class="ri-heart-3-fill"></i>
-                    <h3>Heart-Shaped Herb</h3>
-                    <p>Tanaman bertuah yang memberikan kekuatan, kecepatan, dan refleks super kepada sang Black Panther.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- COLLECTIONS -->
-
-    <section class="section" id="collections">
-
-        <div class="section__container">
-
-            <h2>Collections</h2>
-
-            <p>
-                Kenali karakter dan dunia yang ada di Black Panther.
-            </p>
-
-
-            <div class="cards">
-
-                <div class="card">
-
-                    <i class="ri-user-star-line"></i>
-
-                    <h3>T'Challa</h3>
-
+                <div class="section__header">
+                    <span class="section__eyebrow">Layanan</span>
+                    <h2 class="section__title">Services</h2>
                     <p>
-                        King of Wakanda dan Black Panther.
+                        Nikmati berbagai pengalaman menarik dari dunia Black Panther
+                        dan Wakanda.
                     </p>
-
                 </div>
 
+                <div class="cards">
 
-                <div class="card">
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-movie-2-line"></i></div>
+                        <h3>Movie Experience</h3>
+                        <p>Saksikan perjalanan T'Challa menjadi Black Panther dan raja Wakanda.</p>
+                    </div>
 
-                    <i class="ri-flashlight-line"></i>
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-ticket-line"></i></div>
+                        <h3>Movie Tickets</h3>
+                        <p>Dapatkan informasi dan pengalaman mengenai film Black Panther.</p>
+                    </div>
 
-                    <h3>Shuri</h3>
-
-                    <p>
-                        Adik T'Challa dan ilmuwan jenius Wakanda.
-                    </p>
-
-                </div>
-
-
-                <div class="card">
-
-                    <i class="ri-earth-line"></i>
-
-                    <h3>Wakanda</h3>
-
-                    <p>
-                        Negara tersembunyi dengan teknologi yang sangat maju.
-                    </p>
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-shield-star-line"></i></div>
+                        <h3>Wakanda</h3>
+                        <p>Jelajahi dunia Wakanda yang penuh teknologi dan Vibranium.</p>
+                    </div>
 
                 </div>
 
             </div>
 
+        </section>
 
-            <!-- BUY BUTTON di Collections -->
-            <div style="margin-top: 3rem; text-align: center;">
-                <button class="btn buy-ticket">
+
+        <!-- CAST & CHARACTERS -->
+
+        <section class="section section--alt" id="cast">
+
+            <div class="section__container">
+
+                <div class="section__header">
+                    <span class="section__eyebrow">Pemeran</span>
+                    <h2 class="section__title">Karakter Utama</h2>
+                    <p>Mengenal pahlawan dan pejuang hebat di balik kejayaan Wakanda.</p>
+                </div>
+
+                <div class="cards cards--4">
+
+                    <div class="card card--character">
+                        <span class="card__number">01</span>
+                        <div class="card__icon"><i class="ri-shield-user-fill"></i></div>
+                        <h3>T'Challa / Black Panther</h3>
+                        <p>Raja Wakanda yang memiliki kekuatan superhero dari Ramuan Berbentuk Hati dan kostum Vibranium.</p>
+                    </div>
+
+                    <div class="card card--character">
+                        <span class="card__number">02</span>
+                        <div class="card__icon"><i class="ri-sword-fill"></i></div>
+                        <h3>Erik Killmonger</h3>
+                        <p>Mantan prajurit operasi khusus yang menantang T'Challa untuk merebut takhta Wakanda.</p>
+                    </div>
+
+                    <div class="card card--character">
+                        <span class="card__number">03</span>
+                        <div class="card__icon"><i class="ri-cpu-fill"></i></div>
+                        <h3>Shuri</h3>
+                        <p>Putri Wakanda dan kepala Divisi Desain Wakanda yang merancang teknologi canggih.</p>
+                    </div>
+
+                    <div class="card card--character">
+                        <span class="card__number">04</span>
+                        <div class="card__icon"><i class="ri-focus-3-fill"></i></div>
+                        <h3>Okoye</h3>
+                        <p>Jenderal pasukan khusus wanita Dora Milaje yang sangat setia pada takhta Wakanda.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY / TEKNOLOGI -->
+
+        <section class="section" id="gallery">
+
+            <div class="section__container">
+
+                <div class="section__header">
+                    <span class="section__eyebrow">Vibranium</span>
+                    <h2 class="section__title">Galeri &amp; Teknologi</h2>
+                    <p>Wakanda terkenal dengan pemanfaatan logam terkuat di bumi, Vibranium, dalam segala aspek kehidupan.</p>
+                </div>
+
+                <div class="cards">
+
+                    <div class="card card--tech">
+                        <div class="card__icon"><i class="ri-flashlight-fill"></i></div>
+                        <h3>Vibranium Suit</h3>
+                        <p>Kostum kinetik yang dapat menyerap energi serangan dan mengembalikannya ke musuh.</p>
+                    </div>
+
+                    <div class="card card--tech">
+                        <div class="card__icon"><i class="ri-rocket-fill"></i></div>
+                        <h3>Royal Talon Fighter</h3>
+                        <p>Pesawat tempur canggih Wakanda dengan kecepatan tinggi dan sistem kamuflase tak terlihat.</p>
+                    </div>
+
+                    <div class="card card--tech">
+                        <div class="card__icon"><i class="ri-heart-3-fill"></i></div>
+                        <h3>Heart-Shaped Herb</h3>
+                        <p>Tanaman bertuah yang memberikan kekuatan, kecepatan, dan refleks super kepada sang Black Panther.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COLLECTIONS -->
+
+        <section class="section section--alt" id="collections">
+
+            <div class="section__container">
+
+                <div class="section__header">
+                    <span class="section__eyebrow">Koleksi</span>
+                    <h2 class="section__title">Collections</h2>
+                    <p>Kenali karakter dan dunia yang ada di Black Panther.</p>
+                </div>
+
+                <div class="cards">
+
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-user-star-line"></i></div>
+                        <h3>T'Challa</h3>
+                        <p>King of Wakanda dan Black Panther.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-flashlight-line"></i></div>
+                        <h3>Shuri</h3>
+                        <p>Adik T'Challa dan ilmuwan jenius Wakanda.</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__icon"><i class="ri-earth-line"></i></div>
+                        <h3>Wakanda</h3>
+                        <p>Negara tersembunyi dengan teknologi yang sangat maju.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA BANNER -->
+
+        <section class="cta">
+            <div class="cta__container">
+                <div>
+                    <h2>Siap Masuk ke <span>Wakanda</span>?</h2>
+                    <p>Amankan kursimu sekarang dan rasakan pengalaman sinematik terbaik.</p>
+                </div>
+                <button class="btn btn--light buy-ticket">
                     BUY TICKET
                     <i class="ri-arrow-right-long-line"></i>
                 </button>
             </div>
-
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- CONTACT -->
+        <!-- CONTACT -->
 
-    <section class="section" id="contact">
+        <section class="section" id="contact">
 
-        <div class="section__container">
+            <div class="section__container contact__grid">
 
-            <h2>Contact Us</h2>
+                <div class="contact__info">
+                    <span class="section__eyebrow">Hubungi Kami</span>
+                    <h2 class="section__title">Contact Us</h2>
+                    <p>
+                        Punya pertanyaan tentang Black Panther?
+                        Hubungi kami untuk mendapatkan informasi lebih lanjut.
+                    </p>
 
-            <p>
-                Punya pertanyaan tentang Black Panther?
-                Hubungi kami untuk mendapatkan informasi lebih lanjut.
-            </p>
+                    <ul class="contact__list">
+                        <li><i class="ri-mail-line"></i> hello@wakanda.id</li>
+                        <li><i class="ri-phone-line"></i> +62 812 3456 7890</li>
+                        <li><i class="ri-map-pin-line"></i> Birnin Zana, Wakanda</li>
+                    </ul>
+                </div>
 
-            <button class="btn contact-btn">
-                CONTACT US
-                <i class="ri-mail-line"></i>
-            </button>
+                <form class="contact__form" id="contact-form" novalidate>
+                    <div class="form__group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" name="name" placeholder="Nama lengkap" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                    </div>
+                    <div class="form__group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tulis pesanmu..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn contact-btn">
+                        KIRIM PESAN
+                        <i class="ri-send-plane-line"></i>
+                    </button>
+                </form>
 
-        </div>
+            </div>
 
-    </section>
+        </section>
+
+    </main>
 
 
-    <!-- BUY TICKET PAGE -->
+    <!-- BUY TICKET MODAL -->
 
-    <div id="buy-ticket-page" class="ticket-page" style="display: none;">
+    <div id="buy-ticket-page" class="ticket-page" role="dialog" aria-modal="true" aria-labelledby="ticket-title">
 
         <div class="ticket-content">
 
-            <h2>Pemesanan Tiket</h2>
+            <button class="ticket-close" id="close-ticket" aria-label="Tutup">
+                <i class="ri-close-line"></i>
+            </button>
+
+            <h2 id="ticket-title">Pemesanan Tiket</h2>
 
             <p>Silakan pilih kategori tiket Anda:</p>
 
             <div class="ticket-options">
 
                 <div class="ticket-card">
-
                     <h3>Reguler</h3>
-
-                    <p>Rp 50.000</p>
-
-                    <button class="btn">Pilih</button>
-
+                    <div class="ticket-price">Rp 50.000</div>
+                    <ul class="ticket-features">
+                        <li><i class="ri-check-line"></i> Kursi standar</li>
+                        <li><i class="ri-check-line"></i> Audio Dolby</li>
+                        <li><i class="ri-check-line"></i> Layar 2D</li>
+                    </ul>
+                    <button class="btn btn--ghost select-ticket" data-type="reguler" data-price="50000">Pilih</button>
                 </div>
 
-
-                <div class="ticket-card">
-
+                <div class="ticket-card ticket-card--featured">
+                    <span class="ticket-tag">Populer</span>
                     <h3>VIP</h3>
-
-                    <p>Rp 150.000</p>
-
-                    <button class="btn">Pilih</button>
-
+                    <div class="ticket-price">Rp 150.000</div>
+                    <ul class="ticket-features">
+                        <li><i class="ri-check-line"></i> Kursi recliner</li>
+                        <li><i class="ri-check-line"></i> IMAX 3D</li>
+                        <li><i class="ri-check-line"></i> Snack &amp; minuman</li>
+                    </ul>
+                    <button class="btn select-ticket" data-type="vip" data-price="150000">Pilih</button>
                 </div>
 
             </div>
 
-            <button class="btn" id="close-ticket">Kembali</button>
-
         </div>
 
     </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top" aria-label="Kembali ke atas">
+        <i class="ri-arrow-up-line"></i>
+    </button>
 
 
     <!-- FOOTER -->
@@ -477,66 +506,41 @@
 
         <div class="footer__container">
 
-            <div class="footer__col">
-
-                <h3>WAKANDA</h3>
-
+            <div class="footer__col footer__brand">
+                <img src="logo (1).png" alt="Black Panther Logo" class="footer__logo">
                 <p>
                     Negara dengan teknologi paling maju di dunia,
                     tersembunyi dengan damai di jantung Afrika.
                 </p>
-
+                <ul class="socials socials--sm">
+                    <li><a href="https://www.tiktok.com/@velraithe_" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ri-tiktok-fill"></i></a></li>
+                    <li><a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a></li>
+                    <li><a href="https://www.instagram.com/cynicc___/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+                </ul>
             </div>
 
-
             <div class="footer__col">
-
                 <h3>Links</h3>
-
                 <ul class="footer__links">
-
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#cast">Karakter</a></li>
                 </ul>
-
             </div>
 
-
             <div class="footer__col">
-
                 <h3>Legal</h3>
-
                 <ul class="footer__links">
-
-                    <li>
-                        <a href="#">Privacy Policy</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Terms of Service</a>
-                    </li>
-
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
                 </ul>
-
             </div>
 
         </div>
 
-
         <div class="footer__bar">
-
-            Copyright © 2026 Black Panther Landing Page. All rights reserved.
-
+            Copyright &copy; 2026 Black Panther Landing Page. All rights reserved.
         </div>
 
     </footer>
